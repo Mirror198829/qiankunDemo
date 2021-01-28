@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import routes from './router';
 import nlComponetLib from './nlComponetLib'
-//import store from './store';
+import store from './store';
 Vue.config.productionTip = false;
 Vue.use(nlComponetLib)
 
@@ -22,6 +22,7 @@ function render(props = {}) {
     routes,
   });
   instance = new Vue({
+    store,
     router,
     render: h => h(App),
   }).$mount(container ? container.querySelector('#app') : '#app');
@@ -34,8 +35,10 @@ if (!window.__POWERED_BY_QIANKUN__) {
 function storeTest(props) {
   props.onGlobalStateChange &&
   props.onGlobalStateChange(
-      (value, prev) => console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev),
-      true,
+      (value, prev) => {
+        console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev)
+        store.commit('changeUserName',value.userName)
+      }
     )
   // setGlobalState && setGlobalState({
   //   userName:'ignore'
@@ -54,8 +57,9 @@ export async function bootstrap() {
  * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法
  */
 export async function mount(props) {
-  console.log(11111111,props)
   Vue.prototype.$act = props
+  console.log(props)
+  store.commit('changeUserName',props.getGlobalState('userName'))
   storeTest(props); // 测试双向传递数据
   render(props);
 }

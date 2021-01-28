@@ -2,9 +2,8 @@
   <div>
     <button @click="addNum()">{{num}}</button>
     <button @click="to('/summary')">主应用 home</button>
-    <h3>用户名：{{userName}}</h3>
-    <nl-title name="num"></nl-title>
-    <!-- <micr-comp :num = 'num'></micr-comp> -->
+    <h3>用户名：{{$store.state.userName}}</h3>
+    <!-- <nl-title name="num"></nl-title> -->
     <button @click="changeGlobalState">改变globalState</button>
   </div>
 </template>
@@ -19,7 +18,7 @@
       }
     },
     components: {
-      nlTitle: window.commonComponent.nlTitle
+      //nlTitle: window.commonComponent.nlTitle
     },
     methods: {
       addNum() {
@@ -29,8 +28,7 @@
           this.$router.push(path)
       },
       changeGlobalState(){
-        this.$act.setGlobalState({userName:`子应用token`})
-
+        this.$act.setGlobalState({userName:`new USER`})
       }
     },
     mounted() {

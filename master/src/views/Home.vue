@@ -21,6 +21,7 @@
         <i class="el-icon-menu"></i>
         <span slot="title">子应用-about页面</span>
       </el-menu-item>
+      登陆用户：{{$act.getGlobalState('userName')}}
       <el-button @click="logout">退出登陆</el-button>
     </el-menu>
     <div v-if="$route.path.indexOf('/micr/') > -1" ref="subContainer" id="subContainer"></div>
@@ -50,7 +51,10 @@ export default {
   methods: {
     logout(){
       this.$router.push('/login')
-      this.$act.setGlobalState({})
+      this.$act.setGlobalState({
+        userName:null,
+        token:null
+      })
     }
   },
   async mounted() {
