@@ -1,13 +1,16 @@
 {
-  "name": "npm-run-all",
+  "name": "qiankun",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve"
+    "serve": "npm-run-all --parallel serve:**",
+    "serve:master": "cd master && npm run serve",
+    "serve:subApp1": "cd m-app1 && npm run serve",
+    "serve:subApp2": "cd m-app2 && npm run serve"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "npm-run-all": "^4.1.5"
   },
   "eslintConfig": {
     "root": true,
