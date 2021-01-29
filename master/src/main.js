@@ -16,10 +16,17 @@ let props = {
 
 registerMicroApps([
   {
-    name: 'vueApp', // app name registered
+    name: 'subApp1', // app name registered
     entry: '//localhost:3000',
     container: '#subContainer', 
-    activeRule: '#/micr',
+    activeRule: '#/subApp1',
+    props:props
+  },
+  {
+    name: 'subApp2', // app name registered
+    entry: '//localhost:3001',
+    container: '#subContainer', 
+    activeRule: '#/subApp2',
     props:props
   }
 ]);

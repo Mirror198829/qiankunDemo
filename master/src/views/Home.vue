@@ -13,18 +13,22 @@
         <i class="el-icon-menu"></i>
         <span slot="title">主应用-about页面</span>
       </el-menu-item>
-      <el-menu-item index="/micr/home">
+      <el-menu-item index="/subApp1/home">
         <i class="el-icon-menu"></i>
-        <span slot="title">子应用-home页面</span>
+        <span slot="title">子应用1-home页面</span>
       </el-menu-item>
-      <el-menu-item index="/micr/about">
+      <el-menu-item index="/subApp1/about">
         <i class="el-icon-menu"></i>
-        <span slot="title">子应用-about页面</span>
+        <span slot="title">子应用1-about页面</span>
+      </el-menu-item>
+      <el-menu-item index="/subApp2/home">
+        <i class="el-icon-menu"></i>
+        <span slot="title">子应用2-home页面</span>
       </el-menu-item>
       登陆用户：{{$act.getGlobalState('userName')}}
       <el-button @click="logout">退出登陆</el-button>
     </el-menu>
-    <div v-if="$route.path.indexOf('/micr/') > -1" ref="subContainer" id="subContainer"></div>
+    <div ref="subContainer" id="subContainer"></div>
     <router-view/>
   </div>
 </template>

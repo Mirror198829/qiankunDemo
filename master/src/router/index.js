@@ -29,8 +29,12 @@ const routes = [{
       },
       // 子应用路由配置
       {
-        path: '/micr/*',
-        name: 'MicrApp'
+        path: '/subApp1/*',
+        name: 'subApp1'
+      },
+      {
+        path: '/subApp2/*',
+        name: 'subApp2'
       }
     ]
   }

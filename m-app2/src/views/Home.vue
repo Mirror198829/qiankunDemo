@@ -1,14 +1,11 @@
 <template>
   <div>
-    <h1 style="background:pink;padding:20px;margin:0">sub App1</h1>
+    <h1 style="background: yellow;padding:20px;margin:0">sub App2</h1>
     <button @click="addNum()">{{num}}</button>
-    <button @click="to('/summary')">主应用 home</button>
+    <button @click="to('/summary')">sub-APP2主应用 home</button>
     <h3>用户名：{{$store.state.userName}}</h3>
+    
     <!-- <nl-title name="num"></nl-title> -->
-    <div id="nav">
-      <router-link to="/subApp1/home">Home</router-link> |
-      <router-link to="/subApp1/about">About</router-link>
-    </div>
     <button @click="changeGlobalState">改变globalState</button>
   </div>
 </template>
@@ -18,8 +15,7 @@
     name: '',
     data() {
       return {
-        num: 0,
-        userName:''
+        num: 0
       }
     },
     components: {
@@ -37,7 +33,6 @@
       }
     },
     mounted() {
-      this.userName = this.$act.getGlobalState('userName')
     },
     created() {
     }
