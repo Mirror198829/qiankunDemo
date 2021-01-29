@@ -25,6 +25,10 @@
         <i class="el-icon-menu"></i>
         <span slot="title">子应用2-home页面</span>
       </el-menu-item>
+      <el-menu-item index="/subApp2/about">
+        <i class="el-icon-menu"></i>
+        <span slot="title">子应用2-about页面</span>
+      </el-menu-item>
       登陆用户：{{$act.getGlobalState('userName')}}
       <el-button @click="logout">退出登陆</el-button>
     </el-menu>
