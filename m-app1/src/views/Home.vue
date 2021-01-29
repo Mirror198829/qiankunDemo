@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="background:pink;padding:20px;margin:0">sub App1</h1>
+    <h1 style="background:pink;padding:20px;margin:0">sub App1 - Home页面</h1>
     <ul>
       <router-link to="/summary">主应用-Home</router-link> | 
       <router-link to="/about">主应用-About</router-link> | 
@@ -17,7 +17,7 @@
       <button @click="$router.push('/subApp2/home')">子2-Home </button> |
       <button @click="$router.push('/subApp2/about')">子2-About </button>
     </ul>
-    <button @click="to('/summary')">主应用 home</button>
+    <hr>
     <h3>用户名：{{$store.state.userName}}</h3>
     <!-- <nl-title name="num"></nl-title> -->
     <button @click="changeGlobalState">改变globalState</button>

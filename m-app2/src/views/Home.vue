@@ -1,8 +1,23 @@
 <template>
   <div>
-    <h1 style="background: yellow;padding:20px;margin:0">sub App2</h1>
-    <button @click="addNum()">{{num}}</button>
-    <button @click="to('/summary')">sub-APP2主应用 home</button>
+    <h1 style="background: yellow;padding:20px;margin:0">sub App2 - Home页面</h1>
+    <ul>
+      <router-link to="/summary">主应用-Home</router-link> | 
+      <router-link to="/about">主应用-About</router-link> | 
+      <router-link to="/subApp1/home">子1-Home</router-link> | 
+      <router-link to="/subApp1/about">子1-About</router-link> | 
+      <router-link to="/subApp2/home">子2-Home</router-link> | 
+      <router-link to="/subApp2/about">子2-About</router-link>
+    </ul>
+    <ul>
+      <button @click="$router.push('/summary')">主应用-Home </button> |
+      <button @click="$router.push('/about')">主应用-About </button> |
+      <button @click="$router.push('/subApp1/home')">子1-Home </button> |
+      <button @click="$router.push('/subApp1/about')">子1-About </button> |
+      <button @click="$router.push('/subApp2/home')">子2-Home </button> |
+      <button @click="$router.push('/subApp2/about')">子2-About </button>
+    </ul>
+    <hr>
     <h3>用户名：{{$store.state.userName}}</h3>
     
     <!-- <nl-title name="num"></nl-title> -->
